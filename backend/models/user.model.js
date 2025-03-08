@@ -19,6 +19,9 @@ const userSchema = new mongoose.Schema(
         type: String,
         required: true,
         unique: true,
+        trim: true,
+        lowercase: true,
+        match: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, // Ensures valid email format
     },
     followers: [{
         type: mongoose.Schema.Types.ObjectId,
